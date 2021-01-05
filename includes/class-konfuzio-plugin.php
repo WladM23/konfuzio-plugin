@@ -34,7 +34,7 @@ class Konfuzio_Plugin {
 	    $plugin_shortcode_visualisator = new Konfuzio_Plugin_Sortcode_Visualisator($this->get_plugin_name(), $this->get_version() );
 	    $this->loader->add_action('wp_enqueue_scripts', $plugin_shortcode_visualisator, 'enqueue_styles');
         $this->loader->add_action('wp_enqueue_scripts', $plugin_shortcode_visualisator, 'enqueue_scripts');
-	    $this->loader->add_shortcode('foobar',$plugin_shortcode_visualisator,'konfuzio_visualisator');
+	    $this->loader->add_shortcode('konfuzio_visualisator',$plugin_shortcode_visualisator,'konfuzio_visualisator');
     }
 
 	private function define_admin_hooks() {
