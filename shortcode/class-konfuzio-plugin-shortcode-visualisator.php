@@ -44,10 +44,7 @@ class Konfuzio_Plugin_Sortcode_Visualisator{
     </div>
     
     <div style="direction: ltr; text-align: center; position: relative; top: -42px;">
-                                <div class="btn-group text-muted" role="group" aria-label="Basic example">  
-                                    <a class="btn btn-secondary" href="#" style="background-color: #707070; color: #ffffff;">Middle</a> 
                                     <a class="btn btn-secondary" href="'. get_permalink($p->ID).'"style="background-color: #707070; color: #ffffff;">Show text section</a> 
-                                </div>
                             </div>
                           </div>';
 

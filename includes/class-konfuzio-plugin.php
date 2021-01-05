@@ -18,14 +18,12 @@ class Konfuzio_Plugin {
 
 		$this->load_dependencies();
 		$this->define_admin_hooks();
-		$this->define_public_hooks();
 		$this->define_shortcode_hocks();
 	}
 
 	private function load_dependencies() {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-konfuzio-plugin-loader.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-konfuzio-plugin-admin.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-konfuzio-plugin-public.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'shortcode/class-konfuzio-plugin-shortcode-visualisator.php';
 		$this->loader = new Konfuzio_Plugin_Loader();
 	}
@@ -46,14 +44,6 @@ class Konfuzio_Plugin {
 
 
 	}
-
-	private function define_public_hooks() {
-		$plugin_public = new Konfuzio_Plugin_Public( $this->get_plugin_name(), $this->get_version() );
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-
-	}
-
 
     public function run() {
 		$this->loader->run();
